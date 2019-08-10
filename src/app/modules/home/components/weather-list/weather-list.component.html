@@ -1,0 +1,29 @@
+<pre>
+
+  <ng-container *ngFor="let weather of weatherList">
+  weather.clouds.all:         {{ weather.clouds.all }}
+  weather.dt:                 {{ weather.dt }}
+  weather.dtTxt:              {{ weather.dtTxt }}
+  weather.main.grndLevel:     {{ weather.main.grndLevel }}
+  weather.main.humidity:      {{ weather.main.humidity }}
+  weather.main.pressure:      {{ weather.main.pressure }}
+  weather.main.seaLevel:      {{ weather.main.seaLevel }}
+  weather.main.temp:          {{ weather.main.temp }}
+  weather.main.tempKf:        {{ weather.main.tempKf }}
+  weather.main.tempMax:       {{ weather.main.tempMax }}
+  weather.main.tempMin:       {{ weather.main.tempMin }}
+  weather?.rain?.last3h:      {{ weather?.rain?.last3h }}
+  weather?.snow?.last3h:      {{ weather?.snow?.last3h }}
+  weather?.wind?.deg:         {{ weather?.wind?.deg }}
+  weather?.wind?.speed:       {{ weather?.wind?.speed }}
+
+  <ng-container *ngFor="let weatherMetadata of weather.weatherMetadataList">
+  weather?.weatherMetadata.id:          {{ weatherMetadata.id }}
+  weather?.weatherMetadata.main:        {{ weatherMetadata.main }}
+  weather?.weatherMetadata.description: {{ weatherMetadata.description }}
+  weather?.weatherMetadata.icon:        {{ weatherMetadata.icon }}
+  </ng-container>
+
+  </ng-container>
+
+</pre>

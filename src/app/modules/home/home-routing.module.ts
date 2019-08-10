@@ -12,6 +12,7 @@ const routes: Routes = [
     resolve: {
       forecast: ForecastResolver,
     },
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
   },
 ];
 
