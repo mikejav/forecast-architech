@@ -2,8 +2,9 @@
   <input type="text" class="form-control" formControlName="cityName">
 </div>
 
-<ng-container *ngIf="(forecast$ | async) as forecast">
+<ng-container *ngIf="(forecast$ | async) as forecast; else noForecast">
 
+  <app-city-details [city]="forecast.city"></app-city-details>
   {{ forecast.city.coord.lat }}
   {{ forecast.city.coord.lon }}
   {{ forecast.city.country }}
@@ -15,6 +16,14 @@
   <app-weather-list [weatherList]="forecast.weatherList"></app-weather-list>
 
 </ng-container>
+
+<ng-template #noForecast>
+  <ng-container *ngIf="forecastNotFound">
+    NOT FOUND
+  </ng-container>
+  
+</ng-template>
+
 
 <p>home works!</p>
 

@@ -5,12 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CityDetailsComponent } from './components/city-details/city-details.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     WeatherListComponent,
+    CityDetailsComponent,
   ],
   imports: [
     CommonModule,
