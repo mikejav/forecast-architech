@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Forecast } from 'src/app/shared/models/Forecast';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  forecast$: Observable<Forecast>;
+
+  constructor(
+    private _activatedRoute: ActivatedRoute,
+  ) { }
 
   ngOnInit() {
+    this.initializeForecast$();
   }
 
+  private initializeForecast$() {
+    this.forecast$ = this._activatedRoute.data.pipe(
+      map(data => data.forecast as Forecast)
+    );
+  }
 }
