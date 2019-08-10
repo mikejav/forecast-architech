@@ -8,7 +8,9 @@ export const environment = {
 
   apiEndpoints: {
     openWeatherMap: 'http://api.openweathermap.org/data/2.5/forecast'
-  }
+  },
+
+  openWeatherMapIconsUrl: 'http://openweathermap.org/img/wn',
 };
 
 /*

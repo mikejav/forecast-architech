@@ -1,5 +1,6 @@
-<div [formGroup]="forecastForm">
-  <input type="text" class="form-control" formControlName="cityName">
+<div class="shadow bg-white position-relative" [formGroup]="forecastForm">
+  <input type="text" class="form-control form-control-lg" formControlName="cityName" placeholder="Enter city name">
+  <i class="icon ion-ios-search inputSearchIcon"></i>
 </div>
 
 <ng-container *ngIf="(forecast$ | async) as forecast; else noForecast">
@@ -15,13 +16,3 @@
   </ng-container>
   
 </ng-template>
-
-
-<p>home works!</p>
-
-<div class="my-5">
-  <div class="card">
-    <div class="card-header">header</div>
-    <div class="card-body">body</div>
-  </div>
-</div>

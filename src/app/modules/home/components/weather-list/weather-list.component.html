@@ -1,4 +1,27 @@
-<pre>
+<div class="card shadow" *ngIf="weatherList.length">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngFor="let weather of weatherList">
+      <div class="row">
+        <div class="col-1 align-middle">
+          <ng-container *ngFor="let weatherMetadata of weather.weatherMetadataList">
+            <img
+              class="mr-2 my-n2"
+              width="50px"
+              height="50px"
+              [src]="getImgUrlForIcon(weatherMetadata.icon)" 
+              alt=""
+            />
+          </ng-container>
+        </div>
+        <div class="col-3">{{ weather.dtTxt.format() }}</div>
+        <div class="col-3"><small>Temperature:</small> {{ weather.main.temp }}°C</div>
+        <div class="col-3"><small>Humidity:</small> {{ weather.main.humidity }}%</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- <pre>
 
   <ng-container *ngFor="let weather of weatherList">
   weather.clouds.all:         {{ weather.clouds.all }}
@@ -26,4 +49,4 @@
 
   </ng-container>
 
-</pre>
+</pre> -->

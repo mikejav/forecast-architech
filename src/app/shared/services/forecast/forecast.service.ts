@@ -17,6 +17,7 @@ export class ForecastService {
   getForecastForCity(cityName: string): Observable<Forecast> {
     const params = new HttpParams()
       .append('q', cityName)
+      .append('units', 'metric')
       .append('appid', environment.openWeatherMapAppId);
 
     return this._httpClient

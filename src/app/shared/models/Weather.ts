@@ -4,22 +4,23 @@ import { WeatherMetadata } from './WeatherMetadata';
 import { Snow } from './Snow';
 import { Rain } from './Rain';
 import { WeatherMain } from './WeatherMain';
+import * as moment from 'moment';
 
 export class Weather {
 
-  dt: Date;
+  dt: moment.Moment;
   main: WeatherMain;
   weatherMetadataList: WeatherMetadata[];
   clouds?: Clouds;
   wind?: Wind;
   rain?: Rain;
   snow?: Snow;
-  dtTxt: Date; // date of calculation
+  dtTxt: moment.Moment; // date of calculation
 
   deserialize(input: any) {
     Object.assign(this, input);
 
-    this.dt = new Date(input.dt);
+    this.dt = moment(input.dt);
 
     this.main = new WeatherMain().deserialize(input.main);
 
@@ -43,7 +44,7 @@ export class Weather {
       this.snow = new Snow().deserialize(input.snow);
     }
 
-    this.dtTxt = new Date(input.dt_txt);
+    this.dtTxt = moment(input.dt_txt);
 
     return this;
   }
