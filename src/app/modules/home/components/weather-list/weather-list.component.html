@@ -1,23 +1,20 @@
 <div class="card shadow" *ngIf="weatherList.length">
   <ul class="list-group list-group-flush">
-    <li class="list-group-item" *ngFor="let weather of weatherList">
-      <div class="row">
-        <div class="col-3 col-lg-1 align-middle text-center">
-          <ng-container *ngFor="let weatherMetadata of weather.weatherMetadataList">
-            <img
-              class="mr-2 my-n3"
-              width="50px"
-              height="50px"
-              [src]="getImgUrlForIcon(weatherMetadata.icon)" 
-              alt=""
-            />
-          </ng-container>
+    <li class="list-group-item p-0" *ngFor="let weather of weatherList">
+
+      <div class="grid-container" *ngFor="let weatherMetadata of weather.weatherMetadataList">
+        <div class="icon">
+          <img
+            [src]="getImgUrlForIcon(weatherMetadata.icon)" 
+            alt=""
+          />
         </div>
-        <div class="col-3">{{ weather.dtTxt.format('dddd h:mm a') }}</div>
-        <div class="col-3"><small>Temperature:</small> {{ weather.main.temp }}°C</div>
-        <div class="col-2"><small>Humidity:</small> {{ weather.main.humidity }}%</div>
-        <div class="col-3"><small>Pressure:</small> {{ weather.main.pressure }} hPa</div>
+        <div class="date">{{ weather.dtTxt.format('dddd h:mm a') }}</div>
+        <div class="temperature"><small>Temperature:</small> {{ weather.main.temp }}°C</div>
+        <div class="humidity"><small>Humidity:</small> {{ weather.main.humidity }}%</div>
+        <div class="pressure"><small>Pressure:</small> {{ weather.main.pressure }} hPa</div>
       </div>
+
     </li>
   </ul>
 </div>
