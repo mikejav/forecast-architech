@@ -15,7 +15,11 @@ export class HumidityChartComponent {
 
   get chartData(): ChartDataSets[] {
     return [
-      { data: this.weatherList.map((weather) => weather.main.humidity) },
+      {
+        data: this.weatherList
+          .filter((weather, index) => index % 4 === 0)
+          .map((weather) => weather.main.humidity)
+      },
     ];
   }
 

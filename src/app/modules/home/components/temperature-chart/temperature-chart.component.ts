@@ -16,7 +16,11 @@ export class TemperatureChartComponent {
 
   get chartData(): ChartDataSets[] {
     return [
-      { data: this.weatherList.map((weather) => weather.main.temp) },
+      {
+        data: this.weatherList
+          .filter((weather, index) => index % 4 === 0)
+          .map((weather) => weather.main.temp)
+      },
     ];
   }
 
