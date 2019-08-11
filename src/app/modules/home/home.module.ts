@@ -9,6 +9,7 @@ import { WeatherListComponent } from './components/weather-list/weather-list.com
 import { CityDetailsComponent } from './components/city-details/city-details.component';
 import { TemperatureChartComponent } from './components/temperature-chart/temperature-chart.component';
 import { HumidityChartComponent } from './components/humidity-chart/humidity-chart.component';
+import { PressureAvgComponent } from './components/pressure-avg/pressure-avg.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HumidityChartComponent } from './components/humidity-chart/humidity-cha
     CityDetailsComponent,
     TemperatureChartComponent,
     HumidityChartComponent,
+    PressureAvgComponent,
   ],
   imports: [
     CommonModule,

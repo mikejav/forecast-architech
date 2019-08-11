@@ -10,6 +10,7 @@
 <ng-container *ngIf="(forecast$ | async) as forecast; else noForecast">
 
   <app-city-details class="d-block mt-4" [city]="forecast.city"></app-city-details>
+  <app-pressure-avg [weatherList]="forecast.weatherList"></app-pressure-avg>
 
   <div class="row">
     <app-temperature-chart class="col col-lg-6 mt-4" [weatherList]="forecast.weatherList"></app-temperature-chart>
