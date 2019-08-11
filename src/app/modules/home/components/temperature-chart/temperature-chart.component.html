@@ -1,0 +1,25 @@
+<div class="card shadow">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold">
+      <i class="icon ion-ios-thermometer mr-2"></i>
+      Temperature <small class="font-weight-normal">[°C]</small>
+    </h6>
+  </div>
+  <div class="card-body">
+    <div class="flex">
+      <div class="flex-item">
+        <div style="display: block;">
+          <canvas
+            baseChart
+            [datasets]="chartData"
+            [labels]="chartLabels"
+            [options]="chartOptions"
+            [colors]="chartColors"
+            [legend]="false"
+            chartType="line"
+          ></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
