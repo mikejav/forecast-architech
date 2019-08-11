@@ -6,7 +6,6 @@
   </ng-template>
 </div>
 
-
 <ng-container *ngIf="(forecast$ | async) as forecast; else noForecast">
 
   <app-city-details class="d-block mt-4" [city]="forecast.city"></app-city-details>
@@ -21,7 +20,16 @@
 </ng-container>
 
 <ng-template #noForecast>
-  <ng-container *ngIf="forecastNotFound">
-    NOT FOUND
+  <ng-container *ngIf="forecastNotFound; else enterCityNameTemplate">
+    <div class="jumbotron text-center mt-4">
+      <i class="icon ion-ios-warning display-1"></i>
+      <p>No weather found for specified area</p>
+    </div>
   </ng-container>
+  <ng-template #enterCityNameTemplate>
+    <div class="jumbotron text-center mt-4">
+      <i class="icon ion-md-search display-1"></i>
+      <p>Enter the city name in the search above</p>
+    </div>
+  </ng-template>
 </ng-template>

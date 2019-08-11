@@ -20,6 +20,10 @@ export class HomeComponent implements OnInit {
     return !!this._activatedRoute.snapshot.queryParams.cityName;
   }
 
+  get forecastFormCityName() {
+    return this.forecastForm.controls.cityName;
+  }
+
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
