@@ -30,18 +30,22 @@ export class HomeComponent implements OnInit {
     private _formBuilder: FormBuilder,
   ) { }
 
-  private initializeForm() {
-    const initCityName = this._activatedRoute.snapshot.queryParams.cityName || '';
-
-    this.forecastForm = this._formBuilder.group({
-      cityName: [initCityName],
-    });
+  public get queryParamsMap$() {
+    return this._activatedRoute.queryParamMap;
   }
 
   ngOnInit() {
     this.initializeForm();
     this.initializeForecast$();
     this.initializeFormValueChangesHandler();
+  }
+
+  private initializeForm() {
+    const initCityName = this._activatedRoute.snapshot.queryParams.cityName || '';
+
+    this.forecastForm = this._formBuilder.group({
+      cityName: [initCityName],
+    });
   }
 
   private initializeForecast$() {

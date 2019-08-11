@@ -1,5 +1,11 @@
 <div class="shadow position-relative" [formGroup]="forecastForm">
-  <input type="text" class="form-control form-control-lg bg-white" formControlName="cityName" placeholder="Enter city name">
+  <input
+    type="text"
+    class="form-control form-control-lg bg-white"
+    formControlName="cityName"
+    placeholder="Enter city name"
+    [value]="(queryParamsMap$ | async).get('cityName') || ''"
+  />
   <i class="icon ion-ios-search inputSearchIcon" *ngIf="!isLoading; else searchLoadingSpinner"></i>
   <ng-template #searchLoadingSpinner>
     <div class="spinner-border spinner-sm inputSpinIcon"></div>
