@@ -7,7 +7,8 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { WeatherListComponent } from './components/weather-list/weather-list.component';
 import { CityDetailsComponent } from './components/city-details/city-details.component';
-
+import { TemperatureChartComponent } from './components/temperature-chart/temperature-chart.component';
+import { HumidityChartComponent } from './components/humidity-chart/humidity-chart.component';
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { CityDetailsComponent } from './components/city-details/city-details.com
     HomeComponent,
     WeatherListComponent,
     CityDetailsComponent,
+    TemperatureChartComponent,
+    HumidityChartComponent,
   ],
   imports: [
     CommonModule,

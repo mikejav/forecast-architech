@@ -1,6 +1,14 @@
 .inputSearchIcon {
   position: absolute;
-  top: .25rem;
+  top: 0.25rem;
   right: 1rem;
   font-size: 1.75rem;
+}
+
+.inputSpinIcon {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.75rem;
+  border-width: 3px;
 }

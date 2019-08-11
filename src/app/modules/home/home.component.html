@@ -1,12 +1,21 @@
-<div class="shadow bg-white position-relative" [formGroup]="forecastForm">
-  <input type="text" class="form-control form-control-lg" formControlName="cityName" placeholder="Enter city name">
-  <i class="icon ion-ios-search inputSearchIcon"></i>
+<div class="shadow position-relative" [formGroup]="forecastForm">
+  <input type="text" class="form-control form-control-lg bg-white" formControlName="cityName" placeholder="Enter city name">
+  <i class="icon ion-ios-search inputSearchIcon" *ngIf="!isLoading; else searchLoadingSpinner"></i>
+  <ng-template #searchLoadingSpinner>
+    <div class="spinner-border spinner-sm inputSpinIcon"></div>
+  </ng-template>
 </div>
+
 
 <ng-container *ngIf="(forecast$ | async) as forecast; else noForecast">
 
-  <app-city-details [city]="forecast.city"></app-city-details>
-  <app-weather-list [weatherList]="forecast.weatherList"></app-weather-list>
+  <app-city-details class="d-block mt-4" [city]="forecast.city"></app-city-details>
+
+  <div class="row">
+    <app-temperature-chart class="col col-lg-6 mt-4" [weatherList]="forecast.weatherList"></app-temperature-chart>
+    <app-humidity-chart class="col col-lg-6 mt-4" [weatherList]="forecast.weatherList"></app-humidity-chart>
+  </div>
+  <app-weather-list class="d-block mt-4" [weatherList]="forecast.weatherList"></app-weather-list>
 
 </ng-container>
 
@@ -14,5 +23,4 @@
   <ng-container *ngIf="forecastNotFound">
     NOT FOUND
   </ng-container>
-  
 </ng-template>

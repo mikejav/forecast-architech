@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   forecast$: Observable<Forecast>;
   forecastForm: FormGroup;
+  isLoading = false;
 
   get forecastNotFound() {
     return !!this._activatedRoute.snapshot.queryParams.cityName;
@@ -62,9 +63,12 @@ export class HomeComponent implements OnInit {
       params.cityName = val;
     }
 
+    this.isLoading = true;
     this._router.navigate([], {
       relativeTo: this._activatedRoute,
       queryParams: params,
+    }).then(() => {
+      this.isLoading = false;
     });
   }
 }

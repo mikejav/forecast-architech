@@ -15,7 +15,7 @@ export class Weather {
   wind?: Wind;
   rain?: Rain;
   snow?: Snow;
-  dtTxt: moment.Moment; // date of calculation
+  dtTxt: moment.Moment;
 
   deserialize(input: any) {
     Object.assign(this, input);
