@@ -1,4 +1,4 @@
-# Forecast - weather forecast SPA
+# NgForecastApp - weather forecast SPA
 
 Before we start you need to know that you can view the running app without ronning it locally.
 Just open this project github pages:
