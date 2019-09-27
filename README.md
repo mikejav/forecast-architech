@@ -1,6 +1,6 @@
 # NgForecastApp - weather forecast SPA
 
-Before we start you need to know that you can view the running app without ronning it locally.
+Before we start you need to know that you can view the running app without running it locally.
 Just open this project github pages:
 https://mikejav.github.io/ng-weather-app/?cityName=Krak%C3%B3w
 
@@ -15,7 +15,7 @@ npm install
 ```
 
 ## How to run
-the following comand will run the developlent server:
+the following command will run the development server:
 ```shell
 ng serve
 ```
