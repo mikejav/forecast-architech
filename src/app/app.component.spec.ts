@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'forecast-archtech'`, () => {
+  it(`should have as title 'ng-weather-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('forecast-archtech');
+    expect(app.title).toEqual('ng-weather-app');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to forecast-archtech!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to ng-weather-app!');
   });
 });
