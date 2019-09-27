@@ -1,4 +1,4 @@
-# NgForecastApp - weather forecast SPA
+# NgWeatherApp - weather forecast SPA written in Angular
 
 Before we start you need to know that you can view the running app without running it locally.
 Just open this project github pages:
