@@ -25,7 +25,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "lodash": "^4.17.15",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "ng2-charts": "^2.3.0",
     "rxjs": "~6.4.0",
     "startbootstrap-sb-admin-2": "github:BlackrockDigital/startbootstrap-sb-admin-2",
